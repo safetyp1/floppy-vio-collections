@@ -1,0 +1,29 @@
+{
+  "acquisition_mode": "vio",
+  "silo": {
+    "url": "http://vio:8080"
+  },
+  "floppy": {
+    "url": "http://floppy:8000"
+  },
+  "interval": "3h",
+  "state_path": "state/sync.db",
+  "lists": [
+    {
+      "key": "movies",
+      "list_id": "1",
+      "media_type": "movie",
+      "library_ids": ["1"],
+      "title": "Floppy Movies"
+    },
+    {
+      "key": "series",
+      "list_id": "2",
+      "media_type": "tv",
+      "library_ids": ["2"],
+      "title": "Floppy Series",
+      "max_items": 200,
+      "selection": "latest_released"
+    }
+  ]
+}

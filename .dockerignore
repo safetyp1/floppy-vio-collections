@@ -1,0 +1,14 @@
+.git
+.github
+.env
+.env.*
+config.json
+config.*.json
+state
+data
+*.db*
+*.dump
+*.log
+floppy-vio-collections
+floppy-silo-collections
+.local

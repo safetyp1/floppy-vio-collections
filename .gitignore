@@ -1,0 +1,15 @@
+.DS_Store
+.env
+.env.*
+config.json
+config.*.json
+!config.example.json
+state/
+data/
+*.db
+*.db-*
+*.dump
+*.log
+floppy-vio-collections
+floppy-silo-collections
+.local/
