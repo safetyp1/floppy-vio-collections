@@ -22,6 +22,9 @@ func TestProviderQueryIsTypedAndParameterized(t *testing.T) {
 		if strings.Contains(query, " OR ") || strings.Contains(query, "LEFT JOIN") || !strings.Contains(query, "episode.series_id = item.content_id") {
 			t.Fatal("series lookup must use a direct episode join")
 		}
+		if strings.Contains(query, "ORDER BY file.id") || !strings.Contains(query, "LIMIT 1") {
+			t.Fatal("playable lookup must find one indexed match without imposing global file order")
+		}
 		movieQuery, err := providerQuery(Entry{"movie", source, identifier}, "movie")
 		if err != nil || strings.Contains(movieQuery, "public.episodes") || !strings.Contains(movieQuery, "file.content_id = item.content_id") {
 			t.Fatal("movie lookup must use a direct file match")

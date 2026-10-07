@@ -23,7 +23,6 @@ JOIN LATERAL (
 		%EPISODE_JOIN%
     WHERE file.media_folder_id = $3::integer AND file.missing_since IS NULL
 			AND %PLAYABLE_MATCH%
-    ORDER BY file.id
     LIMIT 1
 ) AS playable ON true
 WHERE item.type = $1 AND %s = $2
